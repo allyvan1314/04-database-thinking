@@ -1,4 +1,9 @@
 import pymysql.cursors
+from myClass import alUser, MySQL_Connect
+
+alUsr = alUser("", "", "", "", "", "")
+conn = MySQL_Connect("localhost", "admin", "13081410", "MYCHAT")
+conn.connect()
 
 
 # function show home page
@@ -102,9 +107,10 @@ def GetUserInfor(usrName, usrPass):
 
 def UserHomepage():
     print "--------------------Welcome,", alUsr.alName, "--------------------"
-    print "Which option do you want?\tFind [F]riend\tFind [G]roup\t[S]ign out"
+    print "Which option do you want?\nFind [F]riend\tFind [G]roup\t[S]ign out"
+    print "See [L]ist friend\tCheck new [M]essage\tCheck new friend [R]equest"
     choice = raw_input("Your choice: ").upper()
-    if choice not in "FGS" or len(choice) != 1:
+    if choice not in "FGSLMR" or len(choice) != 1:
         print "[-] I don't know how to do that!!"
     else:
         return choice
@@ -151,4 +157,34 @@ def SendFrRq(frName):
     inOutParams = (alUsr.userName, frName, mess)
     cursor.callproc("SEND_FRRQ", inOutParams)
     cursor.connection.commit()
-    print "Friend request to ", frName, "successful!"
+    print "[+] Send friend request to", frName, "successful!"
+
+
+def AcceptFrRq(frName):
+    cursor = conn.connection.cursor()
+    inOutParams = (alUsr.userName, frName)
+    cursor.callproc("ACCEPT_FRRQ", inOutParams)
+    cursor.connection.commit()
+    print "[+] Accept successful!"
+
+
+def RejectFrRq(frName):
+    cursor = conn.connection.cursor()
+    inOutParams = (alUsr.userName, frName)
+    cursor.callproc("REJECT_FRRQ", inOutParams)
+    cursor.connection.commit()
+    print "[+] Reject successful!"
+
+
+def CheckNewFrRq():
+    cursor = conn.connection.cursor()
+    sql = "SELECT AL_USERID FROM AL_USER WHERE AL_USERNAME = %s"
+    cursor.execute(sql, alUsr.userName)
+    for row in cursor:
+        usrId = row['AL_USERID']
+
+    sql = "SELECT * FROM AL_FR_REQUEST WHERE AL_TO = %s AND AL_STATUS = 'waiting'"
+    cursor.execute(sql, (usrId))
+    print "ID \t Sender \t Message \t Time"
+    for row in cursor:
+        print row['AL_RQID'], "\t", row['AL_FROM'], "\t", row['AL_CONTENT'], "\t", row['AL_DATE_CREATE']

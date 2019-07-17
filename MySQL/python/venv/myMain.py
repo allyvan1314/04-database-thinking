@@ -1,12 +1,7 @@
 import pymysql.cursors
 from myClass import alUser, MySQL_Connect
-from myFunc import Hompage, SignIn, checkUsrName, Register, CheckRela, UpdateStt, UserHomepage, GetUserInfor, FindFriend, SendFrRq
-
-
-alUsr = alUser("", "", "", "", "", "")
-conn = MySQL_Connect("localhost", "admin", "13081410", "MYCHAT")
-conn.connect()
-
+from myFunc import Hompage, SignIn, checkUsrName, Register, CheckRela, UpdateStt, UserHomepage, GetUserInfor, FindFriend
+from myFunc import AcceptFrRq, SendFrRq, RejectFrRq, CheckNewFrRq
 
 try:
     hp = Hompage()
@@ -17,6 +12,7 @@ try:
             res = SignIn()
             if res == 0:
                 print "[-] Wrong username or password, try again!!"
+                hp = Hompage()
             else:
                 print "[+] Welcome to my chat!!"
                 usrp = UserHomepage()
@@ -27,6 +23,9 @@ try:
                         if ch == "S":
                             SendFrRq(frName)
                             usrp = UserHomepage()
+                    elif usrp == "L":
+                        CheckNewFrRq()
+                        usrp = UserHomepage()
         elif hp == "R":
             Register()
             hp = Hompage()
@@ -37,5 +36,4 @@ try:
 
 
 finally:
-    conn.close()
     print "------------------------Good bye!-------------------------"
