@@ -107,8 +107,8 @@ def GetUserInfor(usrName, usrPass):
 
 def UserHomepage():
     print "--------------------Welcome,", alUsr.alName, "--------------------"
-    print "Which option do you want?\nFind [F]riend\tFind [G]roup\t[S]ign out"
-    print "See [L]ist friend\tCheck new [M]essage\tCheck new friend [R]equest"
+    print "Which option do you want?\nFind [F]riend\t\t\tFind [G]roup\t\t\t[S]ign out"
+    print "See [L]ist friend\t\tCheck new [M]essage\t\tCheck new friend [R]equest"
     choice = raw_input("Your choice: ").upper()
     if choice not in "FGSLMR" or len(choice) != 1:
         print "[-] I don't know how to do that!!"
@@ -162,29 +162,92 @@ def SendFrRq(frName):
 
 def AcceptFrRq(frName):
     cursor = conn.connection.cursor()
-    inOutParams = (alUsr.userName, frName)
+    inOutParams = (frName, alUsr.userName)
     cursor.callproc("ACCEPT_FRRQ", inOutParams)
+    cursor.connection.commit()
+    inOutParams = (frName, alUsr.userName, "accept")
+    cursor.callproc("UPDATE_FRRQ", inOutParams)
     cursor.connection.commit()
     print "[+] Accept successful!"
 
 
 def RejectFrRq(frName):
     cursor = conn.connection.cursor()
-    inOutParams = (alUsr.userName, frName)
-    cursor.callproc("REJECT_FRRQ", inOutParams)
+    inOutParams = (frName, alUsr.userName, "reject")
+    cursor.callproc("UPDATE_FRRQ", inOutParams)
     cursor.connection.commit()
     print "[+] Reject successful!"
 
 
 def CheckNewFrRq():
     cursor = conn.connection.cursor()
-    sql = "SELECT AL_USERID FROM AL_USER WHERE AL_USERNAME = %s"
-    cursor.execute(sql, alUsr.userName)
+    res = 0
+    inOutParams = (alUsr.userName, res)
+    cursor.callproc("SHOW_FRRQ", inOutParams)
     for row in cursor:
-        usrId = row['AL_USERID']
+        if row['AL_RQID'] is None:
+            print "[-] No friend request!"
+            res = 0
+            break
+        else:
+            print "Id: ", row['AL_RQID'], "From: ", row['AL_USERNAME'], "Message: ", row['AL_CONTENT'], "Date: ", row['AL_DATE_CREATE']
+            res = 1
 
-    sql = "SELECT * FROM AL_FR_REQUEST WHERE AL_TO = %s AND AL_STATUS = 'waiting'"
-    cursor.execute(sql, (usrId))
-    print "ID \t Sender \t Message \t Time"
+    return res
+
+
+def choiceFrRq():
+    print "Do you want:\t[A]ccept friend request\t[R]eject friend request"
+    frrq = raw_input("Your choice: ").upper()
+    if frrq == "A":
+        frName = raw_input("Your friend's name: ")
+        AcceptFrRq(frName)
+    elif frrq == "R":
+        frName = raw_input("Your friend's name: ")
+        RejectFrRq(frName)
+    else:
+        print "[-] I don't khow how to do that!"
+
+
+def ChatUsr(frName):
+    cursor = conn.connection.cursor()
+    mess = raw_input("\rMess: ")
+    inOutParams = (alUsr.userName, frName, mess)
+    cursor.callproc("CHAT_USR", inOutParams)
+    cursor.connection.commit()
+
+
+def LoadOldMess(frName):
+    cursor = conn.connection.cursor()
+    inPutParams = (alUsr.userName, frName)
+    cursor.callproc("LOAD_OLD_MSR", inPutParams)
+    cursor.connection.commit()
     for row in cursor:
-        print row['AL_RQID'], "\t", row['AL_FROM'], "\t", row['AL_CONTENT'], "\t", row['AL_DATE_CREATE']
+        print "\r", row['AL_USERNAME'], "[", row['AL_DATE'], "]:", row['AL_CONTENT']
+
+
+def CheckNewMess():
+    cursor = conn.connection.cursor()
+    res = 0
+    inOutParams = (alUsr.userName, res)
+    cursor.callproc("CHECK_NEWMSG", inOutParams)
+    cursor.connection.commit()
+    for row in cursor:
+        print "\r", row['AL_USERNAME'], "[", row['AL_DATE'], "]:", row['AL_CONTENT']
+
+
+def ShowFrl():
+    cursor = conn.connection.cursor()
+    res = 0
+    inOutParams = (alUsr.userName, res)
+    cursor.callproc("SHOW_FRL", inOutParams)
+    for row in cursor:
+        print "UsrName:", row['AL_USERNAME'], "\tName:", row['AL_NAME'], "\tStatus:", row['AL_STATUS']
+
+
+def SignOut():
+    cursor = conn.connection.cursor()
+    inPutParams = (alUsr.userName, 'offline')
+    cursor.callproc("UPDATE_STT", inPutParams)
+    cursor.connection.commit()
+    print "[+] Sign out successful!"

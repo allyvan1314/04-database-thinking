@@ -919,483 +919,567 @@
     <table id="233" parent="2" name="AL_RELA"/>
     <table id="234" parent="2" name="AL_USER"/>
     <routine id="235" parent="2" name="ACCEPT_FRRQ">
-      <SourceTextLength>413</SourceTextLength>
+      <SourceTextLength>315</SourceTextLength>
       <Definer>admin@localhost</Definer>
       <RoutineKind>procedure</RoutineKind>
     </routine>
-    <routine id="236" parent="2" name="CHECK_RELA">
+    <routine id="236" parent="2" name="CHAT_USR">
+      <SourceTextLength>363</SourceTextLength>
+      <Definer>admin@localhost</Definer>
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="237" parent="2" name="CHECK_NEWMSG">
+      <SourceTextLength>372</SourceTextLength>
+      <Definer>admin@localhost</Definer>
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="238" parent="2" name="CHECK_RELA">
       <SourceTextLength>422</SourceTextLength>
       <Definer>admin@localhost</Definer>
       <RoutineKind>procedure</RoutineKind>
     </routine>
-    <routine id="237" parent="2" name="CHECK_USRNAME">
+    <routine id="239" parent="2" name="CHECK_USRNAME">
       <SourceTextLength>124</SourceTextLength>
       <Definer>admin@localhost</Definer>
       <RoutineKind>procedure</RoutineKind>
     </routine>
-    <routine id="238" parent="2" name="CHECK_USRNAME_WRAP">
+    <routine id="240" parent="2" name="CHECK_USRNAME_WRAP">
       <SourceTextLength>60</SourceTextLength>
       <Definer>admin@localhost</Definer>
       <RoutineKind>procedure</RoutineKind>
     </routine>
-    <routine id="239" parent="2" name="CREATE_ACC">
+    <routine id="241" parent="2" name="CREATE_ACC">
       <SourceTextLength>149</SourceTextLength>
       <Definer>admin@localhost</Definer>
       <RoutineKind>procedure</RoutineKind>
     </routine>
-    <routine id="240" parent="2" name="DROP_USR">
+    <routine id="242" parent="2" name="DROP_USR">
       <SourceTextLength>59</SourceTextLength>
       <Definer>admin@localhost</Definer>
       <RoutineKind>procedure</RoutineKind>
     </routine>
-    <routine id="241" parent="2" name="GET_USR_INFOR">
+    <routine id="243" parent="2" name="GET_USR_INFOR">
       <SourceTextLength>347</SourceTextLength>
       <Definer>admin@localhost</Definer>
       <RoutineKind>procedure</RoutineKind>
     </routine>
-    <routine id="242" parent="2" name="REJECT_FRRQ">
-      <SourceTextLength>321</SourceTextLength>
+    <routine id="244" parent="2" name="LOAD_OLD_MSR">
+      <SourceTextLength>567</SourceTextLength>
       <Definer>admin@localhost</Definer>
       <RoutineKind>procedure</RoutineKind>
     </routine>
-    <routine id="243" parent="2" name="SEND_FRRQ">
+    <routine id="245" parent="2" name="SEND_FRRQ">
       <SourceTextLength>379</SourceTextLength>
       <Definer>admin@localhost</Definer>
       <RoutineKind>procedure</RoutineKind>
     </routine>
-    <routine id="244" parent="2" name="SIGN_IN">
+    <routine id="246" parent="2" name="SHOW_FRL">
+      <SourceTextLength>329</SourceTextLength>
+      <Definer>admin@localhost</Definer>
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="247" parent="2" name="SHOW_FRRQ">
+      <SourceTextLength>273</SourceTextLength>
+      <Definer>admin@localhost</Definer>
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="248" parent="2" name="SIGN_IN">
       <SourceTextLength>149</SourceTextLength>
       <Definer>admin@localhost</Definer>
       <RoutineKind>procedure</RoutineKind>
     </routine>
-    <routine id="245" parent="2" name="SIGN_IN_WRAP">
+    <routine id="249" parent="2" name="SIGN_IN_WRAP">
       <SourceTextLength>60</SourceTextLength>
       <Definer>admin@localhost</Definer>
       <RoutineKind>procedure</RoutineKind>
     </routine>
-    <routine id="246" parent="2" name="UPDATE_STT">
+    <routine id="250" parent="2" name="UPDATE_FRRQ">
+      <SourceTextLength>319</SourceTextLength>
+      <Definer>admin@localhost</Definer>
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="251" parent="2" name="UPDATE_STT">
       <SourceTextLength>74</SourceTextLength>
       <Definer>admin@localhost</Definer>
       <RoutineKind>procedure</RoutineKind>
     </routine>
-    <column id="247" parent="229" name="AL_RQID">
+    <column id="252" parent="229" name="AL_RQID">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="248" parent="229" name="AL_FROM">
+    <column id="253" parent="229" name="AL_FROM">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="249" parent="229" name="AL_TO">
+    <column id="254" parent="229" name="AL_TO">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="250" parent="229" name="AL_CONTENT">
+    <column id="255" parent="229" name="AL_CONTENT">
       <Position>4</Position>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
       <Collation>utf8_general_ci</Collation>
     </column>
-    <column id="251" parent="229" name="AL_DATE_CREATE">
+    <column id="256" parent="229" name="AL_DATE_CREATE">
       <Position>5</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="252" parent="229" name="AL_DATE_MODIFIED">
+    <column id="257" parent="229" name="AL_DATE_MODIFIED">
       <Position>6</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="253" parent="229" name="AL_STATUS">
+    <column id="258" parent="229" name="AL_STATUS">
       <Position>7</Position>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="254" parent="229" name="RQ_FROM">
+    <index id="259" parent="229" name="RQ_FROM">
       <ColNames>AL_FROM</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="255" parent="229" name="RQ_TO">
+    <index id="260" parent="229" name="RQ_TO">
       <ColNames>AL_TO</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="256" parent="229" name="PRIMARY">
+    <key id="261" parent="229" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>AL_RQID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="257" parent="229" name="RQ_FROM">
+    <foreign-key id="262" parent="229" name="RQ_FROM">
       <ColNames>AL_FROM</ColNames>
       <RefSchemaName>MYCHAT</RefSchemaName>
       <RefTableName>AL_USER</RefTableName>
       <RefColNames>AL_USERID</RefColNames>
     </foreign-key>
-    <foreign-key id="258" parent="229" name="RQ_TO">
+    <foreign-key id="263" parent="229" name="RQ_TO">
       <ColNames>AL_TO</ColNames>
       <RefSchemaName>MYCHAT</RefSchemaName>
       <RefTableName>AL_USER</RefTableName>
       <RefColNames>AL_USERID</RefColNames>
     </foreign-key>
-    <column id="259" parent="230" name="AL_GROUPID">
+    <column id="264" parent="230" name="AL_GROUPID">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="260" parent="230" name="AL_GROUPNAME">
+    <column id="265" parent="230" name="AL_GROUPNAME">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
       <Collation>utf8_general_ci</Collation>
     </column>
-    <column id="261" parent="230" name="AL_NUMBERUSER">
+    <column id="266" parent="230" name="AL_NUMBERUSER">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="262" parent="230" name="AL_DATE">
+    <column id="267" parent="230" name="AL_DATE">
       <Position>4</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="263" parent="230" name="PRIMARY">
+    <key id="268" parent="230" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>AL_GROUPID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="264" parent="231" name="AL_DETAILID">
+    <column id="269" parent="231" name="AL_DETAILID">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="265" parent="231" name="AL_USERID">
+    <column id="270" parent="231" name="AL_USERID">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="266" parent="231" name="AL_GROUPID">
+    <column id="271" parent="231" name="AL_GROUPID">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="267" parent="231" name="DETAIL_USER">
+    <index id="272" parent="231" name="DETAIL_USER">
       <ColNames>AL_USERID</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="268" parent="231" name="DETAIL_GROUP">
+    <index id="273" parent="231" name="DETAIL_GROUP">
       <ColNames>AL_GROUPID</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="269" parent="231" name="PRIMARY">
+    <key id="274" parent="231" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>AL_DETAILID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="270" parent="231" name="DETAIL_USER">
+    <foreign-key id="275" parent="231" name="DETAIL_USER">
       <ColNames>AL_USERID</ColNames>
       <RefSchemaName>MYCHAT</RefSchemaName>
       <RefTableName>AL_USER</RefTableName>
       <RefColNames>AL_USERID</RefColNames>
     </foreign-key>
-    <foreign-key id="271" parent="231" name="DETAIL_GROUP">
+    <foreign-key id="276" parent="231" name="DETAIL_GROUP">
       <ColNames>AL_GROUPID</ColNames>
       <RefSchemaName>MYCHAT</RefSchemaName>
       <RefTableName>AL_GROUP</RefTableName>
       <RefColNames>AL_GROUPID</RefColNames>
     </foreign-key>
-    <column id="272" parent="232" name="AL_MESSID">
+    <column id="277" parent="232" name="AL_MESSID">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="273" parent="232" name="AL_FROM">
+    <column id="278" parent="232" name="AL_FROM">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="274" parent="232" name="AL_TO">
+    <column id="279" parent="232" name="AL_TO">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="275" parent="232" name="AL_CONTENT">
+    <column id="280" parent="232" name="AL_CONTENT">
       <Position>4</Position>
       <DataType>varchar(1000)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
       <Collation>utf8_general_ci</Collation>
     </column>
-    <column id="276" parent="232" name="AL_DATE">
+    <column id="281" parent="232" name="AL_DATE">
       <Position>5</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="277" parent="232" name="AL_STATUS">
+    <column id="282" parent="232" name="AL_STATUS">
       <Position>6</Position>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="278" parent="232" name="AL_TYPE">
+    <column id="283" parent="232" name="AL_TYPE">
       <Position>7</Position>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="279" parent="232" name="MESS_USER">
+    <index id="284" parent="232" name="MESS_USER">
       <ColNames>AL_FROM</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="280" parent="232" name="PRIMARY">
+    <key id="285" parent="232" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>AL_MESSID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="281" parent="232" name="MESS_USER">
+    <foreign-key id="286" parent="232" name="MESS_USER">
       <ColNames>AL_FROM</ColNames>
       <RefSchemaName>MYCHAT</RefSchemaName>
       <RefTableName>AL_USER</RefTableName>
       <RefColNames>AL_USERID</RefColNames>
     </foreign-key>
-    <column id="282" parent="233" name="AL_RELAID">
+    <column id="287" parent="233" name="AL_RELAID">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="283" parent="233" name="AL_USER1">
+    <column id="288" parent="233" name="AL_USER1">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="284" parent="233" name="AL_USER2">
+    <column id="289" parent="233" name="AL_USER2">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="285" parent="233" name="AL_RELA">
+    <column id="290" parent="233" name="AL_RELA">
       <Position>4</Position>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="286" parent="233" name="RELA_USER1">
+    <index id="291" parent="233" name="RELA_USER1">
       <ColNames>AL_USER1</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="287" parent="233" name="RELA_USER2">
+    <index id="292" parent="233" name="RELA_USER2">
       <ColNames>AL_USER2</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="288" parent="233" name="PRIMARY">
+    <key id="293" parent="233" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>AL_RELAID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="289" parent="233" name="RELA_USER1">
+    <foreign-key id="294" parent="233" name="RELA_USER1">
       <ColNames>AL_USER1</ColNames>
       <RefSchemaName>MYCHAT</RefSchemaName>
       <RefTableName>AL_USER</RefTableName>
       <RefColNames>AL_USERID</RefColNames>
     </foreign-key>
-    <foreign-key id="290" parent="233" name="RELA_USER2">
+    <foreign-key id="295" parent="233" name="RELA_USER2">
       <ColNames>AL_USER2</ColNames>
       <RefSchemaName>MYCHAT</RefSchemaName>
       <RefTableName>AL_USER</RefTableName>
       <RefColNames>AL_USERID</RefColNames>
     </foreign-key>
-    <column id="291" parent="234" name="AL_USERID">
+    <column id="296" parent="234" name="AL_USERID">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="292" parent="234" name="AL_USERNAME">
+    <column id="297" parent="234" name="AL_USERNAME">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="293" parent="234" name="AL_PASSWORD">
+    <column id="298" parent="234" name="AL_PASSWORD">
       <Position>3</Position>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="294" parent="234" name="AL_NAME">
+    <column id="299" parent="234" name="AL_NAME">
       <Position>4</Position>
       <DataType>varchar(40)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
       <Collation>utf8_general_ci</Collation>
     </column>
-    <column id="295" parent="234" name="AL_EMAIL">
+    <column id="300" parent="234" name="AL_EMAIL">
       <Position>5</Position>
       <DataType>varchar(40)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="296" parent="234" name="AL_PHONE">
+    <column id="301" parent="234" name="AL_PHONE">
       <Position>6</Position>
       <DataType>varchar(11)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="297" parent="234" name="AL_STATUS">
+    <column id="302" parent="234" name="AL_STATUS">
       <Position>7</Position>
       <DataType>varchar(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="298" parent="234" name="PRIMARY">
+    <index id="303" parent="234" name="AL_PHONE">
+      <ColNames>AL_PHONE</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="304" parent="234" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>AL_USERID</ColNames>
       <Primary>1</Primary>
     </key>
-    <argument id="299" parent="235" name="usrFrom">
+    <key id="305" parent="234" name="AL_PHONE">
+      <ColNames>AL_PHONE</ColNames>
+      <UnderlyingIndexName>AL_PHONE</UnderlyingIndexName>
+    </key>
+    <argument id="306" parent="235" name="usrFrom">
       <Position>1</Position>
       <DataType>varchar(20)|0s</DataType>
     </argument>
-    <argument id="300" parent="235" name="usrTo">
+    <argument id="307" parent="235" name="usrTo">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
     </argument>
-    <argument id="301" parent="236" name="usrFrom">
+    <argument id="308" parent="236" name="usrFrom">
       <Position>1</Position>
       <DataType>varchar(20)|0s</DataType>
     </argument>
-    <argument id="302" parent="236" name="usrTo">
+    <argument id="309" parent="236" name="usrTo">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
     </argument>
-    <argument id="303" parent="236" name="res">
+    <argument id="310" parent="236" name="mess">
+      <Position>3</Position>
+      <DataType>varchar(1000)|0s</DataType>
+    </argument>
+    <argument id="311" parent="237" name="usrName">
+      <Position>1</Position>
+      <DataType>varchar(20)|0s</DataType>
+    </argument>
+    <argument id="312" parent="237" name="res">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+    </argument>
+    <argument id="313" parent="238" name="usrFrom">
+      <Position>1</Position>
+      <DataType>varchar(20)|0s</DataType>
+    </argument>
+    <argument id="314" parent="238" name="usrTo">
+      <Position>2</Position>
+      <DataType>varchar(20)|0s</DataType>
+    </argument>
+    <argument id="315" parent="238" name="res">
       <Position>3</Position>
       <ArgumentDirection>O</ArgumentDirection>
       <DataType>int(11)|0s</DataType>
     </argument>
-    <argument id="304" parent="237" name="usrName">
+    <argument id="316" parent="239" name="usrName">
       <Position>1</Position>
       <DataType>varchar(20)|0s</DataType>
     </argument>
-    <argument id="305" parent="237" name="res">
+    <argument id="317" parent="239" name="res">
       <Position>2</Position>
       <ArgumentDirection>O</ArgumentDirection>
       <DataType>int(11)|0s</DataType>
     </argument>
-    <argument id="306" parent="238" name="usrName">
+    <argument id="318" parent="240" name="usrName">
       <Position>1</Position>
       <DataType>varchar(20)|0s</DataType>
     </argument>
-    <argument id="307" parent="238" name="res">
+    <argument id="319" parent="240" name="res">
       <Position>2</Position>
       <ArgumentDirection>O</ArgumentDirection>
       <DataType>int(11)|0s</DataType>
     </argument>
-    <argument id="308" parent="239" name="usrName">
+    <argument id="320" parent="241" name="usrName">
       <Position>1</Position>
       <DataType>varchar(20)|0s</DataType>
     </argument>
-    <argument id="309" parent="239" name="pass">
+    <argument id="321" parent="241" name="pass">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
     </argument>
-    <argument id="310" parent="239" name="if_name">
+    <argument id="322" parent="241" name="if_name">
       <Position>3</Position>
       <DataType>varchar(30)|0s</DataType>
     </argument>
-    <argument id="311" parent="239" name="email">
+    <argument id="323" parent="241" name="email">
       <Position>4</Position>
       <DataType>varchar(40)|0s</DataType>
     </argument>
-    <argument id="312" parent="239" name="phone">
+    <argument id="324" parent="241" name="phone">
       <Position>5</Position>
       <DataType>varchar(11)|0s</DataType>
     </argument>
-    <argument id="313" parent="239" name="stt">
+    <argument id="325" parent="241" name="stt">
       <Position>6</Position>
       <DataType>varchar(15)|0s</DataType>
     </argument>
-    <argument id="314" parent="240" name="usrName">
+    <argument id="326" parent="242" name="usrName">
       <Position>1</Position>
       <DataType>varchar(20)|0s</DataType>
     </argument>
-    <argument id="315" parent="241" name="usrName">
+    <argument id="327" parent="243" name="usrName">
       <Position>1</Position>
       <DataType>varchar(20)|0s</DataType>
     </argument>
-    <argument id="316" parent="241" name="alName">
+    <argument id="328" parent="243" name="alName">
       <Position>2</Position>
       <ArgumentDirection>O</ArgumentDirection>
       <DataType>varchar(40)|0s</DataType>
     </argument>
-    <argument id="317" parent="241" name="alEmail">
+    <argument id="329" parent="243" name="alEmail">
       <Position>3</Position>
       <ArgumentDirection>O</ArgumentDirection>
       <DataType>varchar(30)|0s</DataType>
     </argument>
-    <argument id="318" parent="241" name="alPhone">
+    <argument id="330" parent="243" name="alPhone">
       <Position>4</Position>
       <ArgumentDirection>O</ArgumentDirection>
       <DataType>varchar(11)|0s</DataType>
     </argument>
-    <argument id="319" parent="241" name="alStt">
+    <argument id="331" parent="243" name="alStt">
       <Position>5</Position>
       <ArgumentDirection>O</ArgumentDirection>
       <DataType>varchar(20)|0s</DataType>
     </argument>
-    <argument id="320" parent="242" name="usrFrom">
+    <argument id="332" parent="244" name="usrFrom">
       <Position>1</Position>
       <DataType>varchar(20)|0s</DataType>
     </argument>
-    <argument id="321" parent="242" name="usrTo">
+    <argument id="333" parent="244" name="usrTo">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
     </argument>
-    <argument id="322" parent="243" name="usrFrom">
+    <argument id="334" parent="245" name="usrFrom">
       <Position>1</Position>
       <DataType>varchar(20)|0s</DataType>
     </argument>
-    <argument id="323" parent="243" name="usrTo">
+    <argument id="335" parent="245" name="usrTo">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
     </argument>
-    <argument id="324" parent="243" name="mes">
+    <argument id="336" parent="245" name="mes">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
     </argument>
-    <argument id="325" parent="244" name="usrName">
+    <argument id="337" parent="246" name="usrName">
       <Position>1</Position>
       <DataType>varchar(20)|0s</DataType>
     </argument>
-    <argument id="326" parent="244" name="pass">
+    <argument id="338" parent="246" name="res">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+    </argument>
+    <argument id="339" parent="247" name="usrName">
+      <Position>1</Position>
+      <DataType>varchar(20)|0s</DataType>
+    </argument>
+    <argument id="340" parent="247" name="res">
+      <Position>2</Position>
+      <ArgumentDirection>O</ArgumentDirection>
+      <DataType>int(11)|0s</DataType>
+    </argument>
+    <argument id="341" parent="248" name="usrName">
+      <Position>1</Position>
+      <DataType>varchar(20)|0s</DataType>
+    </argument>
+    <argument id="342" parent="248" name="pass">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
     </argument>
-    <argument id="327" parent="244" name="res">
+    <argument id="343" parent="248" name="res">
       <Position>3</Position>
       <ArgumentDirection>O</ArgumentDirection>
       <DataType>int(11)|0s</DataType>
     </argument>
-    <argument id="328" parent="245" name="usrName">
+    <argument id="344" parent="249" name="usrName">
       <Position>1</Position>
       <DataType>varchar(20)|0s</DataType>
     </argument>
-    <argument id="329" parent="245" name="pass">
+    <argument id="345" parent="249" name="pass">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
     </argument>
-    <argument id="330" parent="245" name="res">
+    <argument id="346" parent="249" name="res">
       <Position>3</Position>
       <ArgumentDirection>O</ArgumentDirection>
       <DataType>int(11)|0s</DataType>
     </argument>
-    <argument id="331" parent="246" name="usrName">
+    <argument id="347" parent="250" name="usrFrom">
       <Position>1</Position>
       <DataType>varchar(20)|0s</DataType>
     </argument>
-    <argument id="332" parent="246" name="stt">
+    <argument id="348" parent="250" name="usrTo">
+      <Position>2</Position>
+      <DataType>varchar(20)|0s</DataType>
+    </argument>
+    <argument id="349" parent="250" name="stt">
+      <Position>3</Position>
+      <DataType>varchar(20)|0s</DataType>
+    </argument>
+    <argument id="350" parent="251" name="usrName">
+      <Position>1</Position>
+      <DataType>varchar(20)|0s</DataType>
+    </argument>
+    <argument id="351" parent="251" name="stt">
       <Position>2</Position>
       <DataType>varchar(15)|0s</DataType>
     </argument>

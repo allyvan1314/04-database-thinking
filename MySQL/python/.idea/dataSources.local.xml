@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MYCHAT@localhost" uuid="53c7f716-daae-42e8-95d9-052b4f309710">
+    <data-source name="MYCHAT@localhost" uuid="4420e51a-da54-4be5-8989-e750cbdcfdb9">
       <database-info product="MySQL" version="5.7.26-0ubuntu0.18.04.1" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.15 (Revision: 79a4336f140499bd22dd07f02b708e163844e3d5)" dbms="MYSQL" exact-version="5.7.26" exact-driver-version="8.0">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
